@@ -43,7 +43,6 @@ Finally, once you’ve built out all the routes, deploy your API to Heroku and g
 - Write test
 - Write controller
 - Write model
-- Write service
 - Repeat...
 
 ## Rubric
