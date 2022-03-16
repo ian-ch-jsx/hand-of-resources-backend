@@ -14,4 +14,4 @@ INSERT INTO
 VALUES
     ('Hooch', 'Dog', 'Turner & Hooch'),
     ('Jones', 'Cat', 'Alien'),
-    ('Toto', 'Dog', 'Wizard of Oz');
+    ('Toto', 'Dog', 'The Wizard of Oz');
