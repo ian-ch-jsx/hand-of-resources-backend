@@ -2,6 +2,7 @@ const pool = require('../lib/utils/pool');
 const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
+const MoviePets = require('../lib/models/MoviePets');
 
 describe('hand-of-resources-backend routes', () => {
   beforeEach(() => {
@@ -36,5 +37,12 @@ describe('hand-of-resources-backend routes', () => {
     const res = await request(app).get('/api/v1/movie-pets').send(expected);
 
     expect(res.body).toEqual(expected);
+  });
+
+  it('gets a movie pet by id', async () => {
+    const expected = await MoviePets.findById(1);
+    const resp = await request(app).get(`/api/v1/movie-pets/${expected.id}`);
+
+    expect(resp.body).toEqual({ ...expected });
   });
 });
