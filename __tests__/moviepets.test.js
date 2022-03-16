@@ -57,4 +57,18 @@ describe('hand-of-resources-backend routes', () => {
 
     expect(resp.body).toEqual({ ...expected });
   });
+
+  it('allows users to edit movie pet', async () => {
+    const expected = {
+      id: expect.any(String),
+      petName: 'Jones',
+      petSpecies: 'Cat',
+      movie: 'I am Not an Alien',
+    };
+    const res = await request(app)
+      .patch('/api/v1/movie-pets/2')
+      .send({ movie: 'I am Not an Alien' });
+
+    expect(res.body).toEqual(expected);
+  });
 });
