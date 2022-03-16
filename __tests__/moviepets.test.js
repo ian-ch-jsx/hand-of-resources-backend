@@ -13,6 +13,18 @@ describe('hand-of-resources-backend routes', () => {
     pool.end();
   });
 
+  it('allows user to create a movie pet entry', async () => {
+    const expected = {
+      petName: 'Lassie',
+      petSpecies: 'Dog',
+      movie: 'multiple',
+    };
+
+    const res = await request(app).post('/api/v1/movie-pets').send(expected);
+
+    expect(res.body).toEqual({ id: expect.any(String), ...expected });
+  });
+
   it('gets a list of movie pets', async () => {
     const expected = [
       {
