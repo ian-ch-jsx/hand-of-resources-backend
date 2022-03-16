@@ -71,4 +71,11 @@ describe('hand-of-resources-backend routes', () => {
 
     expect(res.body).toEqual(expected);
   });
+
+  it('deletes an entry by id', async () => {
+    const expected = await MoviePets.findById(1);
+    const res = await request(app).delete(`/api/v1/movie-pets/${expected.id}`);
+
+    expect(res.body).toEqual(expected);
+  });
 });
