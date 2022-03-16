@@ -16,20 +16,20 @@ describe('hand-of-resources-backend routes', () => {
     const expected = [
       {
         id: '1',
-        pet_name: 'Hooch',
-        pet_species: 'Dog',
+        petName: 'Hooch',
+        petSpecies: 'Dog',
         movie: 'Turner & Hooch',
       },
       {
         id: '2',
-        pet_name: 'Jones',
-        pet_species: 'Cat',
+        petName: 'Jones',
+        petSpecies: 'Cat',
         movie: 'Alien',
       },
       {
         id: '3',
-        pet_name: 'Toto',
-        pet_species: 'Dog',
+        petName: 'Toto',
+        petSpecies: 'Dog',
         movie: 'The Wizard of Oz',
       },
     ];
