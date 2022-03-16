@@ -8,3 +8,10 @@ CREATE TABLE moviepets (
     pet_species TEXT NOT NULL,
     movie TEXT NOT NULL
 );
+
+INSERT INTO
+    moviepets (pet_name, pet_species, movie)
+VALUES
+    ('Hooch', 'Dog', 'Turner & Hooch'),
+    ('Jones', 'Cat', 'Alien'),
+    ('Toto', 'Dog', 'Wizard of Oz');
