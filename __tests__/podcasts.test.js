@@ -24,4 +24,33 @@ describe('hand-of-resources-backend routes', () => {
 
     expect(res.body).toEqual({ id: expect.any(String), ...expected });
   });
+
+  it('retrieves a list of podcasts', async () => {
+    const expected = [
+      {
+        id: '1',
+        title: 'Welcome to Night Vale',
+        topic: 'Fictional stories',
+        description:
+          'A fictional community news radio station with heavy surreal vibes.',
+      },
+      {
+        id: '2',
+        title: 'The Magnus Archives',
+        topic: 'Fictional stories',
+        description:
+          'A fictional horror podcast examining case files on unexplained phenomena.',
+      },
+      {
+        id: '3',
+        title: 'The Weirdest Thing I Learned This Week',
+        topic: 'Non-fiction educational',
+        description: 'Weird facts presented by Popular Science magazine.',
+      },
+    ];
+
+    const res = await request(app).get('/api/v1/podcasts').send(expected);
+
+    expect(res.body).toEqual(expected);
+  });
 });

@@ -40,7 +40,7 @@ CREATE TABLE podcasts (
 INSERT INTO
     podcasts (title, topic, descr)
 VALUES
-    ('Welcome to Night Vale', 'fictional stories', 'A fictional community news radio station with heavy surreal vibes.'),
-    ('The Magnus Archives', 'fictional stories', 'A fictional horror podcast examining case files on unexplained phenomena.'),
-    ('The Weirdest Thing I Learned This Week','Non-fiction educational', 'Weird facts presented by Popular Science magazine');
+    ('Welcome to Night Vale', 'Fictional stories', 'A fictional community news radio station with heavy surreal vibes.'),
+    ('The Magnus Archives', 'Fictional stories', 'A fictional horror podcast examining case files on unexplained phenomena.'),
+    ('The Weirdest Thing I Learned This Week','Non-fiction educational', 'Weird facts presented by Popular Science magazine.');
 
