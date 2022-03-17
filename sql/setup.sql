@@ -1,6 +1,4 @@
--- Use this file to define your SQL tables
--- The SQL in this file will be executed when you run `npm run setup-db`
-DROP TABLE IF EXISTS moviepets, gamechars, podcasts;
+DROP TABLE IF EXISTS moviepets, gamechars, podcasts, music;
 
 CREATE TABLE moviepets (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -44,3 +42,15 @@ VALUES
     ('The Magnus Archives', 'Fictional stories', 'A fictional horror podcast examining case files on unexplained phenomena.'),
     ('The Weirdest Thing I Learned This Week','Non-fiction educational', 'Weird facts presented by Popular Science magazine.');
 
+CREATE TABLE music (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    song TEXT NOT NULL,
+    artist TEXT NOT NULL
+);
+
+INSERT INTO
+    music (song, artist)
+VALUES
+    ('The Other Side of Paradise', 'Glass Animals'),
+    ('Two', 'The Antlers'),
+    ('Map Of The World', 'Monsters Of Folk');
