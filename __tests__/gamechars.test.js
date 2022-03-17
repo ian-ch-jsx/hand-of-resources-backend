@@ -65,4 +65,28 @@ describe('hand-of-resources-backend routes', () => {
 
     expect(res.body).toEqual(expected);
   });
+
+  it('updates a game character by id', async () => {
+    const expected = {
+      id: expect.any(String),
+      charName: 'Cheryl Mason',
+      charSpecies: 'Human',
+      game: 'Silent Hill',
+    };
+
+    const res = await request(app)
+      .patch('/api/v1/game-characters/3')
+      .send({ charName: 'Cheryl Mason', game: 'Silent Hill' });
+
+    expect(res.body).toEqual(expected);
+  });
+
+  it('deletes a character by id', async () => {
+    const expected = await GameChars.findById(1);
+    const res = await request(app).delete(
+      `/api/v1/game-characters/${expected.id}`
+    );
+
+    expect(res.body).toEqual(expected);
+  });
 });
