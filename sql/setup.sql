@@ -1,6 +1,6 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
-DROP TABLE IF EXISTS moviepets, gamechars;
+DROP TABLE IF EXISTS moviepets, gamechars, podcasts;
 
 CREATE TABLE moviepets (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -16,11 +16,11 @@ VALUES
     ('Jones', 'Cat', 'Alien'),
     ('Toto', 'Dog', 'The Wizard of Oz');
 
-    CREATE TABLE gamechars (
-        id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-        char_name TEXT NOT NULL,
-        char_species TEXT NOT NULL,
-        game TEXT NOT NULL
+CREATE TABLE gamechars (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    char_name TEXT NOT NULL,
+    char_species TEXT NOT NULL,
+    game TEXT NOT NULL
     );
 
 INSERT INTO
@@ -29,4 +29,18 @@ VALUES
     ('Gwen', 'Deer', 'Spiritfarer'),
     ('Acrid', 'Alien', 'Risk of Rain 2'),
     ('Heather Mason', 'Human', 'Silent Hill 3');
+
+CREATE TABLE podcasts (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    title TEXT NOT NULL,
+    topic TEXT NOT NULL,
+    descr TEXT NOT NULL
+);
+
+INSERT INTO
+    podcasts (title, topic, descr)
+VALUES
+    ('Welcome to Night Vale', 'fictional stories', 'A fictional community news radio station with heavy surreal vibes.'),
+    ('The Magnus Archives', 'fictional stories', 'A fictional horror podcast examining case files on unexplained phenomena.'),
+    ('The Weirdest Thing I Learned This Week','Non-fiction educational', 'Weird facts presented by Popular Science magazine');
 
