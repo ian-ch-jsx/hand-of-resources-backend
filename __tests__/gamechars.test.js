@@ -48,9 +48,20 @@ describe('hand-of-resources-backend routes', () => {
         game: 'Silent Hill 3',
       },
     ];
+
     const res = await request(app)
       .get('/api/v1/game-characters')
       .send(expected);
+
+    expect(res.body).toEqual(expected);
+  });
+
+  it('gets a game character by id', async () => {
+    const expected = await GameChars.findById(3);
+
+    const res = await request(app).get(
+      `/api/v1/game-characters/${expected.id}`
+    );
 
     expect(res.body).toEqual(expected);
   });
