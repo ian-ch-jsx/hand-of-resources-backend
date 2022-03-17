@@ -76,4 +76,11 @@ describe('hand-of-resources-backend routes', () => {
 
     expect(res.body).toEqual(expected);
   });
+
+  it('deletes a podcast by id', async () => {
+    const expected = await Podcasts.findById(2);
+    const res = await request(app).delete(`/api/v1/podcasts/${expected.id}`);
+
+    expect(res.body).toEqual(expected);
+  });
 });
