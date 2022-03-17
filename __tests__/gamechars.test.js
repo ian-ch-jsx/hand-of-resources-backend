@@ -26,4 +26,32 @@ describe('hand-of-resources-backend routes', () => {
 
     expect(res.body).toEqual({ id: expect.any(String), ...expected });
   });
+
+  it('gets a list of game characters', async () => {
+    const expected = [
+      {
+        id: '1',
+        charName: 'Gwen',
+        charSpecies: 'Deer',
+        game: 'Spiritfarer',
+      },
+      {
+        id: '2',
+        charName: 'Acrid',
+        charSpecies: 'Alien',
+        game: 'Risk of Rain 2',
+      },
+      {
+        id: '3',
+        charName: 'Heather Mason',
+        charSpecies: 'Human',
+        game: 'Silent Hill 3',
+      },
+    ];
+    const res = await request(app)
+      .get('/api/v1/game-characters')
+      .send(expected);
+
+    expect(res.body).toEqual(expected);
+  });
 });
