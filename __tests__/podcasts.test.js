@@ -60,4 +60,20 @@ describe('hand-of-resources-backend routes', () => {
 
     expect(res.body).toEqual({ ...expected });
   });
+
+  it('updates a podcast by id', async () => {
+    const expected = {
+      id: expect.any(String),
+      title: 'Welcome 2 Nightvale',
+      topic: 'Fictional stories',
+      description:
+        'A fictional community news radio station with heavy surreal vibes.',
+    };
+
+    const res = await request(app)
+      .patch('/api/v1/podcasts/1')
+      .send({ title: 'Welcome 2 Nightvale' });
+
+    expect(res.body).toEqual(expected);
+  });
 });
